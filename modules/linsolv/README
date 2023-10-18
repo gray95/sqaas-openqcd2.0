@@ -1,0 +1,27 @@
+
+********************************************************************************
+
+          Generic Krylov-space solvers for the lattice Dirac equation
+
+********************************************************************************
+
+
+Files
+-----
+
+cgne.c         Generic CG solver program for the lattice Dirac equation.
+
+fgcr.c         Generic flexible GCR solver program for the lattice Dirac
+               equation.
+
+fgcr4vd.c      Generic flexible GCR solver program for the little Dirac
+               equation.
+
+mscg.c         Generic multi-shift CG solver program for the lattice Dirac
+               equation.
+
+Include file
+------------
+
+The file linsolv.h defines the prototypes for all externally accessible
+functions that are defined in the *.c files listed above.

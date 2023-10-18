@@ -1,0 +1,27 @@
+
+********************************************************************************
+
+                    Basic utility functions (no-MPI versions)
+
+********************************************************************************
+
+
+Files
+-----
+
+endian.c       Byte swapping programs.
+
+mutils.c       Utility programs used in main programs.
+
+parms.c        Utility programs for the administration of parameter sets.
+
+qsum.c         Quadruple-precision arithmetic.
+
+utils.c        Collection of basic utility programs.
+
+
+Include file
+------------
+
+The file utils.h defines the prototypes for all externally accessible
+functions that are defined in the *.c files listed above.

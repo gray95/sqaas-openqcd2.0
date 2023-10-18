@@ -1,0 +1,103 @@
+
+################################################################################
+#
+# 2+1 flavour QCD, mixed boundary conditions, second kind of light-quark
+# twisted-mass reweighting, even-odd preconditioning and decomposition of the
+# light-quark reweighting factor in 2 factors.
+#
+# The specified block sizes assume the local lattice L0xL1xL2xL3 to contain
+# an even number of 4x4x4x4 blocks. Moreover, the local lattice must divide
+# the I/O block 16x16x16x16 specified in simulation parameter file. Other
+# lattice sizes can be accommodated by changing the block sizes "bs" in the
+# various parameter sections.
+#
+################################################################################
+
+[Run name]
+name         64x32v1
+
+[Log and data directories]
+log_dir      /data/openQCD/ms1/log
+dat_dir      /data/openQCD/ms1/dat
+
+[Configurations]
+types        b
+cnfg_dir     /data/openQCD/qcd1/blk
+nio_nodes    8
+nio_streams  4
+first        1
+last         100
+step         1
+nrw          2
+
+[Random number generator]
+level        0
+seed         12681
+
+[Lattice parameters]
+kappa        0.13774 0.1366
+isw          0
+csw          1.715
+
+[Boundary conditions]
+type         2
+phi'         0.0 0.0
+cG           1.0
+cG'          1.0
+cF           1.0
+cF'          1.0
+theta        0.5 0.5 0.5
+
+[Reweighting factor 0]
+rwfact       RWTM2_EO
+im0          0
+mu           0.001 0.002
+isp          0
+nsrc         24
+
+[Reweighting factor 1]
+rwfact       RWRAT
+im0          1
+irp          0
+np           6 3
+isp          1 0
+nsrc         1
+
+[Rational 0]
+degree       9
+range        0.03 6.1
+
+[Solver 0]
+solver       DFL_SAP_GCR
+nkv          16
+isolv        1
+nmr          4
+ncy          5
+nmx          256
+istop        0
+res          1.0e-11
+
+[Solver 1]
+solver       MSCG
+nmx          2048
+istop        0
+res          1.0e-11
+
+[SAP]
+bs           4 4 4 4
+
+[Deflation subspace]
+bs           4 4 4 4
+Ns           28
+
+[Deflation subspace generation]
+kappa        0.13774
+mu           0.005
+ninv         10
+nmr          4
+ncy          4
+
+[Deflation projection]
+nkv          24
+nmx          128
+res          1.0e-2
