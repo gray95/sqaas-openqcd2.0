@@ -12,7 +12,4 @@ jobs:
     name: Job that triggers SQAaaS platform
     steps:
       - name: SQAaaS assessment step
-        uses: eosc-synergy/sqaaas-assessment-action@v1
-        with:
-          repo: 'https://github.com/gray95/sqaas-openqcd2.0'
-          branch: 'main'
+        uses: eosc-synergy/sqaaas-assessment-action@v2
